@@ -32,8 +32,8 @@ public class BattleManager : MonoBehaviour
         switch (state)
         {
             case State.Preparation:
-                player1.Prepare();
-                player2.Prepare();
+                player1.prepare();
+                player2.prepare();
 
                 player1.SetPlay(true);
                 player2.SetPlay(false);
@@ -43,21 +43,23 @@ public class BattleManager : MonoBehaviour
             case State.Player1Select:
                  if (player1.SelectedCharacter != null)
                 {
-                player1.SetPlay(false);
-                player2.SetPlay(true);
-                state = State.Player2Select;
+                    player1.SetPlay(false);
+                    player2.SetPlay(true);
+                    state = State.Player2Select;
                 }
                 break;
 
             case State.Player2Select:
                 if(player2.SelectedCharacter != null)
                 {
-                //set player 2 attacks
-                state = State.Attacking;
+                    player1.Attack();
+                    player2.Attack();
+                    state = State.Attacking;
                 }
                 break;
+
             case State.Attacking:
-                if(isAttackDone)
+                if(player1.IsAttacking() == false && player2.IsAttacking() == false)
                 {
                     //calcullate who take damages
                     //start damage animation

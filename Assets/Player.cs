@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
         selectedCharacter = null;
     }
 
-    public void SelectedCharacter(Character character)
+    public void SelectCharacter(Character character)
     {
         selectedCharacter = character;
     }
@@ -29,5 +29,15 @@ public class Player : MonoBehaviour
             character.Button.interactable = value;
         }
 
+    }
+
+    public void Attack()
+    {
+
+    }
+
+    public bool IsAttacking()
+    {
+        return true;
     }
 }
