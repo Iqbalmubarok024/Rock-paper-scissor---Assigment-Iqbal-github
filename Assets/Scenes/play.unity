@@ -6387,7 +6387,7 @@ MonoBehaviour:
   - {fileID: 1741439313}
   - {fileID: 1210542772}
   atkRef: {fileID: 1156780988}
-  isBot: 0
+  isBot: 1
 --- !u!1 &1674041100
 GameObject:
   m_ObjectHideFlags: 0

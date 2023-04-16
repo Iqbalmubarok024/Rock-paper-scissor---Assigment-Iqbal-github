@@ -19,10 +19,18 @@ public class Player : MonoBehaviour
     {
         if(isBot)
         {
+            List<Character>lotteryList = new List<Character>();
             foreach (var character in characterList)
             {
-                character.Button.interactable = false;
+                int ticket = Mathf.CeilToInt(((float) character.CurrentHP/ (float) character.MaxHP) * 10);
+                for(int i = 0; 1 < ticket; i++)
+                {
+                    lotteryList.Add(character);
+                }
             }
+
+            int index = Random.Range(0, lotteryList.Count);
+            selectedCharacter = lotteryList[index];
         }
     }
 
