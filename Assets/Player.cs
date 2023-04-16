@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,9 +10,21 @@ public class Player : MonoBehaviour
     [SerializeField] Character selectedCharacter;
     [SerializeField] List<Character> characterList;
     [SerializeField] Transform atkRef;
+    [SerializeField] bool isBot;
 
     public Character SelectedCharacter { get => selectedCharacter; }
     public List<Character> CharacterList { get => characterList; }
+
+    private void Start()
+    {
+        if(isBot)
+        {
+            foreach (var character in characterList)
+            {
+                character.Button.interactable = false;
+            }
+        }
+    }
 
     public void prepare()
     {
@@ -27,9 +38,17 @@ public class Player : MonoBehaviour
 
     public void SetPlay(bool value)
     {
-        foreach (var character in characterList)
+        if (isBot)
         {
-            character.Button.interactable = value;
+            int index = Random.Range(0,characterList.Count);
+            selectedCharacter = CharacterList[index];
+        }
+        else
+        {
+            foreach (var character in characterList)
+            {
+                character.Button.interactable = value;
+            }
         }
 
     }
@@ -37,7 +56,7 @@ public class Player : MonoBehaviour
 
     public void Attack()
     {
-        selectedCharacter.transform.DOMove(atkRef.position,1f);
+        selectedCharacter.transform.DOMove(atkRef.position,0.5f);
     }
 
     public bool IsAttacking()
@@ -78,7 +97,7 @@ public class Player : MonoBehaviour
 
     public void Return()
     {
-        selectedCharacter.transform.DOMove(selectedCharacter.InitialPosition,1f);
+        selectedCharacter.transform.DOMove(selectedCharacter.InitialPosition,0.5f);
     }
 
     public bool IsReturning()
