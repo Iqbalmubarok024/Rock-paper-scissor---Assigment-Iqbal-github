@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] Character selectedCharacter;
     [SerializeField] List<Character> characterList;
+    [SerializeField] Transform atkRef;
 
     public Character SelectedCharacter { get => selectedCharacter; }
 
@@ -31,9 +33,10 @@ public class Player : MonoBehaviour
 
     }
 
+
     public void Attack()
     {
-
+        selectedCharacter.transform.DOMove(atkRef.position,1f, true).SetEase(Ease.InOutBounce);
     }
 
     public bool IsAttacking()
