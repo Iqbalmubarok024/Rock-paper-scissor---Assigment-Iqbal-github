@@ -22,7 +22,7 @@ public class BattleManager : MonoBehaviour
         Attacking,
         Damaging,
         Returning,
-        BattleOver
+        BattleIsOver
     }
     void Update()
     {
@@ -85,19 +85,26 @@ public class BattleManager : MonoBehaviour
             case State.Damaging:
                 if(player1.IsDamaging() == false && player2.IsDamaging() == false)
                 {
+                    if(player1.SelectedCharacter != null)
+                        player1.Return();
+
+                    if(player2.SelectedCharacter != null)
+                        player2.Return();
+
                     state = State.Returning;
                 }
                 break;
             case State.Returning:
-                if(IsReturningDone)
+                if(player1.IsReturning() == false && player2.IsReturning() == false)
                 {
-                    if(isPlayerEleminated)
-                        state = State.BattleOver;
+                    if(player1.CharacterList.Count == 0 || player2.CharacterList.Count == 0)
+                        state = State.BattleIsOver;
                     else
                         state = State.Preparation;
                 }
                 break;
-            case State.BattleOver:
+            case State.BattleIsOver:
+                Debug.Log("Battle is Over. player1: " + player1.CharacterList.Count + " player2: " + player2.CharacterList.Count);
                 break;
         }
     }
