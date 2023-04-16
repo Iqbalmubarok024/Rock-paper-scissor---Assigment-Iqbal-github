@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] List<Character> characterList;
     [SerializeField] Transform atkRef;
     [SerializeField] bool isBot;
+    [SerializeField] UnityEvent onTakeDamage;
 
     public Character SelectedCharacter { get => selectedCharacter; }
     public List<Character> CharacterList { get => characterList; }
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
         selectedCharacter.ChangeHP(-damageValue);
         var spriteRend = selectedCharacter.GetComponent<SpriteRenderer>();
         spriteRend.DOColor(Color.red,0.1f).SetLoops(6, LoopType.Yoyo);
+        onTakeDamage.Invoke();
     }
 
     public bool IsDamaging()

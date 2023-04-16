@@ -4,12 +4,43 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    static AudioSource bgmInstance;
+    static AudioSource sfxInstance;
     [SerializeField] AudioSource bgm;
     [SerializeField] AudioSource sfx;
 
     public bool IsMute { get => bgm.mute; }
     public float BgmVolume { get => bgm.volume; }
     public float SfxVolume { get => sfx.volume; }
+    public void Start()
+    {
+        if(bgmInstance != null)            
+        {
+            Destroy(bgm.gameObject);
+            bgm = bgmInstance;
+        }
+        else
+        {
+            bgm.transform.SetParent(null);
+            DontDestroyOnLoad(bgm.gameObject);
+        }
+        
+        if(sfxInstance != null)
+            {
+                bgmInstance = bgm;
+                Destroy(sfx.gameObject);
+                sfx = sfxInstance;
+            }
+        else
+        {
+            sfxInstance = sfx;
+            sfx.transform.SetParent(null);
+            DontDestroyOnLoad(sfx.gameObject);
+        }            
+
+
+    }
+
     public void PlayBGM(AudioClip clip, bool loop = true)
     {
         // if (bgm.isPlaying)
@@ -29,7 +60,7 @@ public class AudioManager : MonoBehaviour
         sfx.Play();
     }
 
-    public void setmute(bool value)
+    public void SetMute(bool value)
     {
         bgm.mute = value;
         sfx.mute = value;
