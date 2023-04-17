@@ -21,13 +21,13 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            bgmInstance = bgm;
             bgm.transform.SetParent(null);
             DontDestroyOnLoad(bgm.gameObject);
         }
         
         if(sfxInstance != null)
             {
-                bgmInstance = bgm;
                 Destroy(sfx.gameObject);
                 sfx = sfxInstance;
             }
@@ -43,8 +43,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(AudioClip clip, bool loop = true)
     {
-        // if (bgm.isPlaying)
-        //     bgm.stop();
+        if (bgm.isPlaying)
+            bgm.Stop();
 
         bgm.clip = clip;
         bgm.loop = loop;
@@ -53,8 +53,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {   
-        // if (sfx.isPlaying)
-        //     sfx.stop();
+        if (sfx.isPlaying)
+            sfx.Stop();
 
         sfx.clip = clip;
         sfx.Play();

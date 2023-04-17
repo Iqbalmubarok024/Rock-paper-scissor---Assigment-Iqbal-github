@@ -123,6 +123,82 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &37273749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 37273750}
+  - component: {fileID: 37273752}
+  - component: {fileID: 37273751}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &37273750
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37273749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 19.377, y: 19.377, z: 19.377}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1532864544}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 55.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &37273751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37273749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 16b6a7c5f6520f14598cfe261e627627, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &37273752
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37273749}
+  m_CullTransparentMesh: 1
 --- !u!1 &84072526 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2909970672726508839, guid: 925ad5f010cb5194daa6e2c553ecf811, type: 3}
@@ -740,7 +816,7 @@ RectTransform:
   m_Children:
   - {fileID: 1792536181}
   m_Father: {fileID: 1532864544}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -777,7 +853,7 @@ RectTransform:
   m_Children:
   - {fileID: 1552126924}
   m_Father: {fileID: 1532864544}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1376,6 +1452,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 37273750}
   - {fileID: 916809422}
   - {fileID: 920663248}
   - {fileID: 84072527}
@@ -1775,6 +1852,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656949186}
   m_CullTransparentMesh: 1
+--- !u!82 &1747416396 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7177233517161622709, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
+  m_PrefabInstance: {fileID: 7177233517254090719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1792536180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1893,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 1179.3, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1792536182
 MonoBehaviour:
@@ -1833,7 +1915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 68a3f645202634344bfec518513880c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2073,6 +2155,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 699542145}
+    - target: {fileID: 2909970672198806400, guid: 925ad5f010cb5194daa6e2c553ecf811, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMute
+      objectReference: {fileID: 0}
     - target: {fileID: 2909970672449900560, guid: 925ad5f010cb5194daa6e2c553ecf811, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2123,7 +2209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2909970672726508838, guid: 925ad5f010cb5194daa6e2c553ecf811, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2909970672726508838, guid: 925ad5f010cb5194daa6e2c553ecf811, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2252,13 +2338,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7177233516503274431, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177233516503274431, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7177233516503274431, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6b2c35d023fb77142a0f3b1c7f547e61, type: 3}
+      objectReference: {fileID: 8300000, guid: 7e16367705e64d842b2eab23eb3801ed, type: 3}
     - target: {fileID: 7177233516554827101, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2303,6 +2393,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7177233516554827102, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 1747416396}
     - target: {fileID: 7177233516554827103, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -2310,6 +2404,6 @@ PrefabInstance:
     - target: {fileID: 7177233517161622709, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 4b734ab7a934fd94f8d0cf4efc360fbc, type: 3}
+      objectReference: {fileID: 8300000, guid: f7ab0ef8a77f7bc4194b6878955d17d1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0098ea56b7264f149ba2d5cb75901487, type: 3}
